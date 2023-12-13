@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <title>FETCH</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+    <h1>Traductor</h1>
+    Español: <input type="text" name="frase" id="español"><br>
+    Ingles: <input type="text" name="frase" id="ingles"><br>
+    <input type="button" id="boton" value="Traducir">
+</body>
+<script>
+    document.getElementById("boton").addEventListener("click",traducirTexto)
+
+    function traducirTexto(){
+        textoEspañol=document.getElementById("español").value
+        textoIngles=document.getElementById("ingles")
+
+        const url = 'https://google-translate1.p.rapidapi.com/language/translate/v2';
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded',
+                'Accept-Encoding': 'application/gzip',
+                'X-RapidAPI-Key': '069093b90dmsh0b096c5c39a5dc7p113a7ejsnd3b0f455236a',
+                'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+            },
+            body: new URLSearchParams({
+                q: document.getElementById("español").value,
+                target: 'en',
+                source: 'es'
+            })
+        };
+
+        try {
+            const response =  fetch(url, options)
+            .then(response => response.json())
+            .then(data => traducir(data));
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    function traducir(datos){
+        document.getElementById("ingles").value = datos.data.translations[0].translatedText;
+    }
+</script>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <title>FETCH</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+    Elige tu pokemon: <input type="text" name="elegir" id="miPokemon">
+    <input type="button" id="boton" value="Mostrar">
+    <ul id="cositas"></ul>
+</body>
+
+<script>
+    document.getElementById("boton").addEventListener("click",mostrarInfo)
+
+    function mostrarInfo(){
+        var pokemon=document.getElementById("miPokemon").value
+        fetch('https://pokeapi.co/api/v2/pokemon/'+pokemon)
+            .then(response => response.json())
+            .then(data => darFormato(data))
+    }
+
+    function darFormato(datos){
+            //nombre, tipo, stats(6), 5 primeros ataques 
+            var padre=document.getElementById("cositas")
+
+            var txtNombre=document.createElement("li")
+                txtNombre.textContent=("Nombre: "+datos.name)
+                padre.appendChild(txtNombre)
+            
+            var txtTipo=document.createElement("li")
+                txtTipo.textContent=("Tipo: "+datos.types[0].type.name)
+                padre.appendChild(txtTipo)
+            
+            var grupStats=document.createElement("li")
+            grupStats.textContent=("Stats:")
+
+            for(i=0; i<datos.stats.length ;i++){
+                var txtStat=document.createElement("ol")
+                txtStat.textContent=((i+1)+": "+datos.stats[i].stat.name+" | "+datos.stats[i].base_stat)
+                grupStats.appendChild(txtStat)
+            }
+            padre.appendChild(grupStats)
+
+            var grupAtaques=document.createElement("li")
+            grupAtaques.textContent=("Ataques:")
+
+            for(j=0; j<5 && j<datos.moves.length; j++){
+                var txtMove=document.createElement("ol")
+                txtMove.textContent=((j+1)+": "+datos.moves[j].move.name)
+                grupAtaques.appendChild(txtMove)
+            }
+            padre.appendChild(grupAtaques)
+
+            var foto=document.createElement("li")
+            foto.textContent=(pokemon+":")
+
+            var imgPokemon=document.createElement("img")
+            foto.appendChild(imgPokemon)
+                imgPokemon.setAttribute("src",datos.sprites.front_shiny)
+                imgPokemon.setAttribute("width",300)
+                imgPokemon.setAttribute("align","top")
+                imgPokemon.setAttribute("height",300)
+            padre.appendChild(foto)
+        }
+    </script>
+</html>

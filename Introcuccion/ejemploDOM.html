@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Prueba</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Probamos una imagen </h1>
+  <input type="submit" id="boton" value="Poner imagen">
+  <div id="padre"></div>
+</body>
+
+
+<script>
+    document.getElementById("boton").addEventListener("click",ponerImagen)
+
+    /*Añadir un elemento nuevo
+    
+    1. Localizar el elemnto padre
+    2. crear lo que necesitemos
+    3. Darle atributos/propiedades = href, src, innertext etc..
+    4. eganchar al padre el elemento nuevo*/
+
+    function ponerImagen(){
+        padre=document.getElementById("padre")
+        imagen=document.createElement("img")
+        imagen.setAttribute("src","https://static.nationalgeographic.es/files/styles/image_3200/public/75552.ngsversion.1422285553360.webp?w=1150&h=767&q=100")
+        padre.appendChild(imagen)
+    }   
+</script>
+</html>

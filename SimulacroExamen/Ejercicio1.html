@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ejercicio1</title>
+    <meta charset=”UTF-8”/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text"  name="texto">
+    <input type="button" value="Arriba">
+    <input type="button" value="Debajo" id="debajo">
+
+    <ul id="lista"></ul>
+</body>
+</html>
+<script>
+document.get
+
+    document.getElementsByTagName("input")[1].addEventListener("click",ponerArriba);
+    document.getElementsByTagName("input")[2].addEventListener("click",ponerAbajo);
+
+    function ponerArriba(){
+        var texto=document.getElementsByName("texto")[0].value;
+        var padre=document.getElementById("lista");
+        var hijo=document.createElement("li");
+        hijo.innerHTML=texto;
+        padre.insertBefore(hijo,padre.children[0]);
+    }
+
+    function ponerAbajo(){
+        var texto=document.getElementsByName("texto")[0].value;
+        var padre=document.getElementById("lista");
+        var hijo=document.createElement("li");
+        hijo.innerHTML=texto;
+        padre.appendChild(hijo);
+    }
+
+</script>

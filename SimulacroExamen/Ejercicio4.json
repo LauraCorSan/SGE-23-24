@@ -1,0 +1,56 @@
+{
+    "alumnos": [
+        {
+            "nombreCompleto": "Juan Pérez",
+            "edad": 18,
+            "telefono": "555-1234",
+            "asignaturasPrimero": [
+                {
+                    "nombre": "Matemáticas",
+                    "nota": 8
+                },
+                {
+                    "nombre": "Lengua",
+                    "nota": 7
+                },  
+                {
+                    "nombre": "Historia",
+                    "nota": 9
+                }
+            ],
+            "viviendaActual": {
+                "localidad": "Ciudad",
+                "calle": "Calle Principal",
+                "poblacion": "Urbanización",
+                "codigoPostal": "12345"
+            },
+            "tieneCoche":true
+        },
+        {
+            "nombreCompleto": "María González",
+            "edad": 17,
+            "telefono": "555-5678",
+            "asignaturasPrimero": [
+                {
+                    "nombre": "Matemáticas",
+                    "nota": 8
+                },
+                {
+                    "nombre": "Lengua",
+                    "nota": 7
+                },
+                {
+                    "nombre": "Historia",
+                    "nota": 9
+                }
+            ],
+            "viviendaActual": {
+                "localidad": "Pueblo",
+                "calle": "Avenida Secundaria",
+                "poblacion": "Barrio",
+                "codigoPostal": "54321"
+            },
+            "tieneCoche":false
+        }
+    ]
+}

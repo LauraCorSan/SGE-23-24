@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <title>JSON LISTA ALUMNOS</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Listado Alumnos</h1>
+    <input type="submit" id="boton" value="Mostrar alumno">
+    <ul id="cositas"></ul>
+
+</body>
+</html>
+
+<script>
+    document.getElementById("boton").addEventListener("click",mostrarAlumno)
+    function mostrarAlumno(){
+
+        var padre=document.getElementById("cositas")
+
+        for(i=0;i<arrayPersonas.length;i++){
+            var filaPersona=document.createElement("li")
+            filaPersona.innerHTML="Nombre: "+(arrayPersonas[i].Nombre)+"<br>"
+            filaPersona.innerHTML+="Apellido: "+(arrayPersonas[i].Apellido)+"<br>"
+            filaPersona.innerHTML+="Edad: "+(arrayPersonas[i].Edad)+"<br>"
+            filaPersona.innerHTML+="Estado Civil: "+(arrayPersonas[i].EstadoCivil)+"<br>"
+            padre.appendChild(filaPersona)
+        }
+
+    }
+
+    var arrayPersonas=[
+    {
+        "Nombre":"Sofia",
+        "Apellido":"Suarez",
+        "Edad":20,
+        "EstadoCivil":"Soltera"
+    },
+    {
+        "Nombre":"Jorge",
+        "Apellido":"Perez",
+        "Edad":30,
+        "EstadoCivil":"Casado"
+    },
+    {
+        "Nombre":"Enrique",
+        "Apellido":"Alonso",
+        "Edad":35,
+        "EstadoCivil":"Casado"
+    },
+    {
+        "Nombre":"Carla",
+        "Apellido":"Valero",
+        "Edad":24,
+        "EstadoCivil":"Soltera"
+    }]
+</script>

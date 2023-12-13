@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <title>JSON INSTITUTO</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Listado Pedidos</h1>
+    <input type="submit" id="boton" value="Mostrar pedidoss">
+    <ul id="cositas"></ul>
+
+</body>
+</html>
+
+<script>
+    /*Un instituto está compuesto de varios profesores.
+    Cada profesor tiene un nombre, dni, teléfono,un departamento y una o varias asignaturas que imparte.
+    Tambien pueden o no estar involucrados en uno o varios  en proyectos del centro, como por ejemplo, convivencia, deportivo etc
+    Crea un json que contenga 3 profesores
+    profesor 1 que imparta 2 asignaturas
+    profesor 2 que imparta 1 asignatura y participe en 2 proyectos 
+    profesor 3 que imparta 4 asignaturas y participe en 1 proyecto*/
+
+
+    var instituto={
+    "profesores": [
+      {
+        "nombre": "Profesor1",
+        "dni": "123456789A",
+        "telefono": "123-456-789",
+        "departamento": "Matemáticas",
+        "asignaturas": ["Matemáticas", "Física"],
+        "proyectos": []
+      },
+      {
+        "nombre": "Profesor2",
+        "dni": "987654321B",
+        "telefono": "987-654-321",
+        "departamento": "Ciencias Sociales",
+        "asignaturas": ["Historia"],
+        "proyectos": ["Convivencia", "Deportivo"]
+      },
+      {
+        "nombre": "Profesor3",
+        "dni": "456789123C",
+        "telefono": "456-789-123",
+        "departamento": "Lengua",
+        "asignaturas": ["Lengua", "Literatura", "Gramática", "Redacción"],
+        "proyectos": ["Cultural"]
+      }
+    ]
+  }
+
+</script>

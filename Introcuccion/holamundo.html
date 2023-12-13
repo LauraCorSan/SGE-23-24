@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <title>Mi Primera Página</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+  <h1>Mi Primera Página</h1>
+  
+  Mi primera página en HTML.
+
+  Nombre<input type="text" name="datosPersonales" id="nombre" >
+  Apellido<input type="text" name="datosPersonales" id="apellido" >
+  <input type="submit" id="boton" value="Enviar">
+</body>
+</html>
+
+<script>
+
+  document.getElementById("boton").addEventListener("click",saludar)
+
+  function saludar(){
+    //Aqui cambiariamos el texto de boton por lo que sea que me responda el usuario en el prompt
+    cadena = prompt("Que info quieres que ponga")
+    alert(document.getElementById("boton").value=cadena)
+    
+    //Imprimimos el array que tienen el mismo TagName
+    alert(document.getElementsByTagName("input")[0].id 
+    + document.getElementsByTagName("input")[1].id
+    + document.getElementsByTagName("input")[2].id);
+  }
+
+
+
+
+//alert("esto es una ventana emergente")
+//console.log("mensajes en consola")
+
+//let nombre= "pepe"
+//var apellido= "gracia"
+//console.log (nombre + apellido)
+//---------------------------------------------------
+//edad= parseInt(prompt("Dime tu edad"))
+
+/*
+if(edad<18) {
+    console.log("eres menor de edad, tienes "+edad)
+}else {
+    console.log("eres mayor de edad, tienes "+edad)
+}
+*/
+//----------------------------------------------------
+//edad<18?console.log("eres menor");
+
+//0-17 eres menor
+//18-65 estas en edad de trabajar
+//+65 jubilado
+
+/*
+if(edad>0 && edad<=17){
+  console.log("eres menor de edad, tienes "+edad)
+}else if(edad>=18 && edad<=65){
+  console.log("estas en edad de trabajar, tienes "+edad)
+}else{
+  console.log("eres jubilado, tienes "+edad)
+}
+*/
+
+/*
+switch(true){
+  case (edad<18):
+    console.log("eres menor de edad, tienes "+edad)
+    break;
+  case (edad>=18 && edad<65):
+    console.log("estas en edad de trabajar, tienes "+edad)
+    break;
+  case (edad>=65):
+    console.log("eres menor de edad, tienes "+edad)
+    break;
+  default: console.log("Edad ingresada no valida")
+    break;
+
+}*/
+//----------------------------------------------------------
+//dia= prompt("Dime un dia")
+
+/* switch(dia.toLowerCase()){
+  case "lunes": 
+  case "martes":
+  case "miercoles":
+  case "jueves":
+  case "viernes":
+    alert ("Es un dia laboral")
+    break;
+  case "sabado":
+  case "domingo":
+    alert("Es fin de semana")
+    break;
+  default: alert("La palabra no es un dia de la semana")
+    break;
+} */
+//------------------------------------------------------------------------------------
+/* let semana = ["lunes","martes","miercoles","jueves","viernes","sabado","domingo"]
+var verdad=false
+
+for(i=0;i<semana.length;i++){
+  if(dia==semana[i]) verdad=true;
+}
+if(verdad==true)alert("Es un dia de la semana")
+else alert("No es un dia de la semana") */
+//-------------------------------------------------------------------------------------
+/* let arrayVacio= new Array();
+respuesta=true;
+
+do{
+  palabra = prompt("Introduce una palabra")
+  if(palabra=="fin"){
+    respuesta=window.confirm("Quieres continuar?")
+  }else{
+      arrayVacio.push(palabra)
+  }
+}while(respuesta==true)
+
+var parrafo="";
+for(i=0;i<arrayVacio.length;i++){
+  parrafo+=arrayVacio[i]+" ";
+}
+alert ("Las palabras del array son: "+parrafo); */
+
+</script>

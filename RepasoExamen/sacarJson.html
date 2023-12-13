@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <title>JSON PEDIDO</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Listado Pedidos</h1>
+    <input type="submit" id="boton" value="Mostrar pedidoss">
+    <ul id="cositas"></ul>
+
+</body>
+</html>
+
+<script>
+    /*El cliente Pedro Ramirez que vive en la Calle de la piruleta 14 ha comprado:
+    -3 impresoras laser Canon
+    -2 Raton Gamer Logitech
+    Por un importe total de 350€*/
+    document.getElementById("boton").addEventListener("click",mostrarAlumno)
+    function mostrarAlumno(){
+        var infoCliente = "El cliente "+Clientes.Nombre+" que vive en la "+Clientes.Direccion+" ha comprado: <br>";
+
+        var infoPedido = Clientes.ultimo_pedido.Productos[0].Cantidad+" "+Clientes.ultimo_pedido.Productos[0].Nombre+" "
+        +Clientes.ultimo_pedido.Productos[0].Fabricante+"<br>"
+        +Clientes.ultimo_pedido.Productos[1].Cantidad+" "+Clientes.ultimo_pedido.Productos[1].Nombre+" "
+        +Clientes.ultimo_pedido.Productos[1].Fabricante+"<br>";
+
+        var totalProduct1=Clientes.ultimo_pedido.Productos[0].Cantidad * Clientes.ultimo_pedido.Productos[0].precio_uni;
+        var totalProduct2=Clientes.ultimo_pedido.Productos[1].Cantidad * Clientes.ultimo_pedido.Productos[1].precio_uni;
+        
+        var totalPedido=totalProduct1+totalProduct2;
+
+        var padre=document.getElementById("cositas")
+
+        
+        var filaCliente = document.createElement("p")
+        filaCliente.innerHTML = infoCliente+infoPedido+ "Por un importe total de "+totalPedido+"€";
+        padre.appendChild(filaCliente)
+}
+
+    var Clientes={
+    "Cliente": 1233,
+    "Nombre": "Pedro Ramirez",
+    "Direccion": "Calle de la piruleta 14",
+    "ultimo_pedido":
+    {
+        "id_pedido":2,
+        "Productos":
+        [
+            {
+                "id_producto":77,
+                "Nombre": "Impresora Laser",
+                "Fabricante":"Canon",
+                "Cantidad": 3,
+                "precio_uni":80
+            },
+            {
+                "id_producto":22,
+                "Nombre":"Raton Gamer",
+                "Fabricante":"Logitech",
+                "Cantidad":2,
+                "precio_uni":55
+            }
+        ]
+    }
+}
+</script>

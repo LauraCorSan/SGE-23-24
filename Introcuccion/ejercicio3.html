@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>Enlaces</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+  <h1>Enlaces utiles: </h1>
+  <a href="https://www.youtube.com/">YouTube.com</a>
+  <a href="https://www.w3schools.com/">w3schools.com</a>
+  <a href="https://chat.openai.com/">ChatGPT.com</a>
+  <a href="https://site.educa.madrid.org/ies.juandelacierva.madrid/">juandelacierva.com</a>
+  
+
+  <input type="submit" id="boton" value="Mostrar enlaces">
+</body>
+</html>
+
+<script>
+    document.getElementById("boton").addEventListener("click",pintarArray)
+
+    function pintarArray(){
+        let miArrayDeEnlaces = new Array();
+        for(i=0; i<document.getElementsByTagName("a").length ; i++){
+            miArrayDeEnlaces.push(document.getElementsByTagName("a")[i].href) 
+            console.log(miArrayDeEnlaces[i]);
+        }  
+    }   
+</script>

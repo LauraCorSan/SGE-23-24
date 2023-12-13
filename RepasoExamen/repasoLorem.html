@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <title>Parrafos</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+  <h1>Parrafos de ejemplo: </h1>
+    <p>¿Qué es poesía?, dices mientras clavas
+        en mi pupila tu pupila azul.
+        ¿Qué es poesía? ¿Y tú me lo preguntas?
+        Poesía... eres tú
+        <a href="google.es">Enlace 1</a></p>
+    <p>Yo no hablo de venganzas ni de perdones;
+        el olvido es la única venganza
+        y el único perdón.
+        <a href="youtube.com">Enlace 2</a></p>
+    <p>Por más que cante un pájaro
+        en el bosque, el ciruelo
+        no rompe a florecer
+        <a href="google.es">Enlace 3</a></p>
+    <p>¿Qué es poesía?, dices mientras clavas
+        en mi pupila tu pupila azul.
+        ¿Qué es poesía? ¿Y tú me lo preguntas?
+        Poesía... eres tú
+        <a href="youtube.com">Enlace 4</a></p>
+    <p>Yo no hablo de venganzas ni de perdones;
+        el olvido es la única venganza
+        y el único perdón.
+        <a href="google.es">Enlace 5</a></p>
+    <p>Por más que cante un pájaro
+        en el bosque, el ciruelo
+        no rompe a florecer.
+        <a href="youtube.com">Enlace 6</a></p>   
+  
+  <input type="button" id="boton" value="Contar">
+  <div id="padre"></div>
+</body>
+</html>
+
+<script>
+    /*Crear una funcion en javascript que cuando pulse el boton "contar":
+    -me cuente el numero de parrafos que tengo -> consola
+    -me cuente el numero de enlaces -> ventana
+    -me muestre el 4 enlace -> escribir directamente en el html "el cuarto enlace es: enlace.com"*/
+    document.getElementById("boton").addEventListener("click",respuestaConteos)
+
+    function respuestaConteos(){
+        contarParrafos();
+        contarEnlaces();
+        cuartoEnlace();
+    } 
+    
+    function contarParrafos(){
+        var numParrafos=document.getElementsByTagName("p").length;
+        console.log ("Esta pagina tiene "+numParrafos+" parrafos");
+    }
+
+    function contarEnlaces(){
+        var numEnlaces=document.getElementsByTagName("a").length;
+        alert("Esta pagina tiene "+numEnlaces+" enlaces");
+    }
+
+    function cuartoEnlace(){
+        var enlacesArray=document.getElementsByTagName("a");
+        var enlace4=enlacesArray[3];
+
+        var padre=document.getElementById("padre");
+        var parrafo=document.createElement("a");
+        parrafo.href=enlace4;
+        parrafo.textContent="otra vez el enlace 4"
+        padre.appendChild(parrafo);
+    }
+</script>

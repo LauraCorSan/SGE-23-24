@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>Añadir</title>
+    <meta charset=”UTF-8”/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text"  id="objeto" ><br>
+    <input type="radio" name="circulo" id="texto"> Texto 
+    <input type="radio" name="circulo" id="enlace"> Enlace
+    <input type="radio" name="circulo" id="foto"> Foto
+    <input type="submit" id="boton" value="Añadir">
+
+    <ul id="cositas"></ul>
+</body>
+
+<script>
+    document.getElementById("boton").addEventListener("click",insertarAlgo)
+
+    function insertarAlgo(){
+        var objetoInsertar = document.getElementById("objeto").value
+        var radioBotones=document.getElementsByName("circulo")
+        
+        var padre=document.getElementById("cositas")
+       
+        if (radioBotones[0].checked) {
+            var texto=document.createElement("li")
+            texto.textContent=objetoInsertar
+            padre.appendChild(texto)
+        }
+
+        if (radioBotones[1].checked) {
+            var lista=document.createElement("li")
+            var enlace=document.createElement("a")
+            lista.appendChild(enlace)
+            enlace.setAttribute("href",objetoInsertar)
+            enlace.innerText=objetoInsertar
+            padre.appendChild(lista)
+        }
+
+        if (radioBotones[2].checked) {
+            var lista=document.createElement("li")
+            var foto=document.createElement("img")
+            lista.appendChild(foto)
+            foto.setAttribute("src",objetoInsertar)
+            foto.setAttribute("width",400)
+            foto.setAttribute("align","top")
+            foto.setAttribute("height",400)
+            padre.appendChild(lista)
+        }
+    }   
+</script>
+</html>

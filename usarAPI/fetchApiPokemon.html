@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <title>FETCH</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+    Elige tu pokemon: <input type="text" name="elegir" id="miPokemon">
+    <input type="button" id="boton" value="Mostrar">
+
+</body>
+
+<script>
+    document.getElementById("boton").addEventListener("click",mostrarInfo)
+
+    function mostrarInfo(){
+        var pokemon=document.getElementById("miPokemon").value
+        fetch('https://pokeapi.co/api/v2/pokemon/'+pokemon)
+            .then(response => response.json())
+            .then(data => darFormato(data))
+
+        function darFormato(datos){
+            //nombre, tipo, stats(6), 5 primeros ataques
+            console.log("Nombre: "+datos.name)
+            console.log("Tipo: "+datos.types[0].type.name)
+            for(i=0; i<datos.stats.length ;i++){
+               console.log("Stats 0"+(i+1)+": "+datos.stats[i].stat.name
+                            +" | "+datos.stats[i].base_stat) 
+            }
+            //datos.moves.forEach((atacks) => console.log("Moves: "+atacks.move.name));
+
+            console.log("Ataques(5):")
+            datos.moves.slice(0,5).forEach((atacks) => console.log(atacks.move.name))
+            //De esta forma va del 0 al 5
+        }
+    }
+    </script>
+
+</html>
+

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Prueba</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    Marca <input type="text" name="datosCoche" id="marca" >
+    Modelo <input type="text" name="datosCoche" id="modelo" >
+  <input type="submit" id="boton" value="Escribir">
+  <ul id="puntitos"></ul>
+</body>
+
+<script>
+    document.getElementById("boton").addEventListener("click",escribirInfoCoche)
+
+    function escribirInfoCoche(){
+        var marcaCoche = document.getElementById("marca").value
+        var modeloCoche = document.getElementById("modelo").value
+        
+        var padre=document.getElementById("puntitos")
+        var lista=document.createElement("li")
+        
+        lista.textContent="Este vehiculo es de la marca "+marcaCoche+" y el modelo "+modeloCoche
+        padre.appendChild(lista)
+    }   
+</script>
+</html>

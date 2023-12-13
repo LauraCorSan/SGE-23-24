@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Compleja</title>
+</head>
+<body>
+
+<script>
+  // Crear una tabla
+  var tabla = document.createElement("table");
+  tabla.border = "1";
+
+  // Crear una fila de encabezado
+  var filaEncabezado = document.createElement("tr");
+
+  // Crear celdas de encabezado
+  var encabezados = ["ID", "Nombre", "Edad", "Ciudad"];
+  for (var i = 0; i < encabezados.length; i++) {
+    var celdaEncabezado = document.createElement("th");
+    celdaEncabezado.textContent = encabezados[i];
+    filaEncabezado.appendChild(celdaEncabezado);
+  }
+
+  // Agregar fila de encabezado a la tabla
+  tabla.appendChild(filaEncabezado);
+
+  // Datos de ejemplo
+  var datos = [
+    { id: 1, nombre: "Juan", edad: 25, ciudad: "Ciudad A" },
+    { id: 2, nombre: "María", edad: 30, ciudad: "Ciudad B" },
+    { id: 3, nombre: "Carlos", edad: 22, ciudad: "Ciudad C" }
+  ];
+
+  // Crear filas de datos
+  for (var i = 0; i < datos.length; i++) {
+    var filaDatos = document.createElement("tr");
+
+    // Crear celdas de datos
+    var celdasDatos = ["id", "nombre", "edad", "ciudad"];
+    for (var j = 0; j < celdasDatos.length; j++) {
+      var celdaDato = document.createElement("td");
+      celdaDato.textContent = datos[i][celdasDatos[j]];
+      filaDatos.appendChild(celdaDato);
+    }
+
+    // Agregar fila de datos a la tabla
+    tabla.appendChild(filaDatos);
+  }
+
+  // Agregar la tabla al cuerpo del documento
+  document.body.appendChild(tabla);
+</script>
+
+</body>
+</html>

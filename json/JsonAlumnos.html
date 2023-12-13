@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <title>JSON ALUMNOS</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+/*Alumno(Nombre, apellido, edad, estado civil (soltero, casado),
+telefono,direccion, (asignaturas de primero y notas), asignaturas de segundo): */
+
+
+    alumno01={
+        "Nombre":"Jorge",
+        "Apellido":"Perez",
+        "Edad":24,
+        "Estado civil":"soltero",
+        "Telefono":"651382874",
+        "Direccion":"C/ Sal si puedes , 16",
+        "AsignaturasPrimero":[
+            {"Nombre":"Sistemas Informaticos",
+            "Nots":9},
+            {"Nombre":"Programacion",
+            "Nota":8},
+            {"Nombre":"Bases de datos",
+            "Nota":10}
+        ],
+        "AsignaturasSegundo":["PSP","Acceso a datos","PMDM"]
+    }
+    alumno02={
+        "Nombre":"Sofia",
+        "Apellido":"Suarez",
+        "Edad":20,
+        "Estado civil":"soltera",
+        "Telefono":"658302073",
+        "Direccion":"C/ Amor hermoso , 3",
+        "AsignaturasPrimero":[
+            {"Nombre":"Sistemas Informaticos",
+            "Nots":6},
+            {"Nombre":"Programacion",
+            "Nota":10},
+            {"Nombre":"Bases de datos",
+            "Nota":7}
+        ],
+        "AsignaturasSegundo":["PSP","Acceso a datos","PMDM"]
+    }
+
+
+console.log(alumno01)
+console.log(alumno02)
+
+console.log(alumno01.AsignaturasPrimero)
+console.log(alumno02.AsignaturasSegundo)
+
+</script>

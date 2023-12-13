@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>Ejercicio2</title>
+    <meta charset=”UTF-8”/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <input type="text"  value="Nombre">
+    <input type="text"  value="Apellido">
+        <input type="checkbox" value="Azul">Azul</input>
+        <input type="checkbox" value="Rojo">Rojo</input>
+        <input type="checkbox" value="Verde">Verde</input>
+    <input type="button" value="Enviar">
+</body>
+</html>
+<script>
+
+    document.getElementsByTagName("input")[5].addEventListener("click",validar);
+
+    function validar(){
+        var nombreTexto=document.getElementsByTagName("input")[0].value
+        var apellidoTexto=document.getElementsByTagName("input")[1].value
+        if(nombreTexto=="" || nombreTexto=="Nombre"){
+            //comprobamos que el nombre no este vacio 
+            alert("ERROR: El nombre esta vacio o es erroneo")
+        }else if(nombreTexto.length<5 || nombreTexto.length>40){
+            //comprobamos que el nombre mida 5-40 caracteres
+            alert("ERROR: El nombre debe tener entre 5 y 40 caracteres")
+        }else if(apellidoTexto=="" || apellidoTexto=="Apellido"){
+            //comprobamos que el apellido no este vacio 
+            alert("ERROR: El apellido esta vacio o es erroneo")
+        }else{
+            //finalmente comprobamos que hay un color seleccionado
+            for(var i=2 ; i<=4  ; i++){
+                if(document.getElementsByTagName("input")[i].checked){
+                    //si al menos uno esta seleccionado imprime que todo esta bien y sale del bucle
+                    alert("FINISH: ¡Los datos se guardaron con exito!")
+                    exit();
+                }else if(i==4){
+                    //si ya ha recorrido todos los checkbox y no ha encontrado ninguno seleccionado da un mensaje de error
+                    alert("ERROR: Tiene que seleccionar al menos un color");
+                }
+            }
+        }
+    }
+</script>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <title>JSON ALUMNOS</title>
+  <meta charset=”utf-8”/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    Nombre: <input type="text" name="datosAlumno" id="nombre">
+    Apellido: <input type="text" name="datosAlumno" id="apellido">
+    Edad: <input type="text" name="datosAlumno" id="edad" > <br>
+    Estado civil: <br> 
+    Soltero<input type="radio" name="estadoCivil" id="soltero">  
+    Casado<input type="radio" name="estadoCivil" id="casado"> <br>
+    <input type="submit" id="boton" value="Añadir">
+</body>
+</html>
+
+<script>
+
+/*Alumno(Nombre, apellido, edad, estado civil (soltero, casado),
+telefono,direccion, (asignaturas de primero y notas), asignaturas de segundo): */
+    let arrayAlumnos=[];
+
+
+    document.getElementById("boton").addEventListener("click",insertarAlumno)
+    function insertarAlumno(){
+
+        var estado=document.getElementsByName("estadoCivil")
+        var estCivil;
+
+        if (estado[0].checked) {
+            estCivil="Soltero"
+        }
+        if (estado[1].checked) {
+            estCivil="Casado"
+        }
+
+        arrayAlumnos.push(
+        alumno={
+            "Nombre":document.getElementById("nombre").value,
+            "Apellido":document.getElementById("apellido").value,
+            "Edad":document.getElementById("edad").value,
+            "Estado civil":estCivil,
+        })
+        
+        console.log(arrayAlumnos)
+
+    }
+
+</script>

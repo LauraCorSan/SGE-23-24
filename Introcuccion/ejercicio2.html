@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <title>Parrafos</title>
+  <meta charset=”utf-8”/>
+</head>
+<body>
+  <h1>Parrafos de ejemplo: </h1>
+    <p>¿Qué es poesía?, dices mientras clavas
+        en mi pupila tu pupila azul.
+        ¿Qué es poesía? ¿Y tú me lo preguntas?
+        Poesía... eres tú</p>
+    <p>Yo no hablo de venganzas ni de perdones;
+        el olvido es la única venganza
+        y el único perdón.</p>
+    <p>Por más que cante un pájaro
+        en el bosque, el ciruelo
+        no rompe a florecer</p>
+  
+  <input type="submit" id="boton" value="Cambiar texto">
+</body>
+</html>
+
+<script>
+    document.getElementById("boton").addEventListener("click",cambiarParrafo)
+
+    function cambiarParrafo(){
+        nuevoParrafo = prompt("Dime que quieres escribir")
+        document.getElementsByTagName("p")[1].textContent= nuevoParrafo
+    }   
+</script>
