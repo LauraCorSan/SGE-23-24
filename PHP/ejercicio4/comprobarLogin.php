@@ -6,7 +6,7 @@
     try {
         $stmt = $conn->prepare("SELECT username, pass FROM users WHERE username= :user AND pass= :pw");
         $stmt->bindParam(':user', $_POST['name']);
-        $stmt->bindParam(':pw', hash("sah256",$_POST['pw']));
+        $stmt->bindParam(':pw', hash("sha256",$_POST['pw']));
 
         $stmt->execute();
 
