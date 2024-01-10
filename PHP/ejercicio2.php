@@ -19,6 +19,7 @@
 -5 intentos para abrirla
 -ir enseñando al usuario los intentos restantes
 -si acierta la combinacion ponerle "alohomora!" */
+
 session_start();
 
 if(count($_POST)==0)
@@ -36,5 +37,4 @@ if($_SESSION["intentos"]<=5 && $_SESSION["intentos"]>0){
 }else{
     echo "HAS PERDIDO :(";
 }
-
 ?>
