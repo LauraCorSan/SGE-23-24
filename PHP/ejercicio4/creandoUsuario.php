@@ -13,8 +13,7 @@
         $stmt->execute([$_POST['name'], $pwOK]);
         $result = $stmt->fetchAll();
 
-        print_r($result);
-        echo "el tamaño del array es: ".count($result);
+        header("Location: login.php");  
         
       } catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
